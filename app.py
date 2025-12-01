@@ -1,5 +1,6 @@
 # app.py
 
+import io
 import streamlit as st
 from PIL import Image
 import numpy as np # 이미지 처리에 필요 (마스크 생성/처리)
@@ -40,7 +41,7 @@ if uploaded_file is not None:
 
 
             # 4. 다운로드 버튼
-            buf = st.io.BytesIO()
+            buf = io.BytesIO()
             original_image.save(buf, format="PNG") 
             byte_im = buf.getvalue()
 
